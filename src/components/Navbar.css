@@ -18,6 +18,9 @@
 }
 
 .nav-item {
+  float: left;
+}
+.nav-item.roll {
   display: inline-block;
   overflow: hidden;
   vertical-align: top;
@@ -25,14 +28,9 @@
   -moz-perspective: 400px;
   -webkit-perspective-origin: 50% 50%;
   -moz-perspective-origin: 50% 50%;
-  float: left;
 }
-.nav-link {
-  text-decoration: none;
-  color: #FFFFFF;
-  display: block;
+.nav-item.roll .nav-link {
   position: relative;
-  padding: 10px;
   -webkit-transition: all 400ms ease;
   -moz-transition: all 400ms ease;
   -webkit-transform-origin: 50% 0%;
@@ -41,18 +39,24 @@
   -moz-transform-style: preserve-3d;
 }
 
+.nav-link {
+  display: block;
+  text-decoration: none;
+  color: #FFFFFF;
+  padding: 10px;
+}
 .nav-link.active {
   background-color: #FFFFFF;
   color: #111;
 }
 
-.nav-item:hover .nav-link {
+.nav-item.roll:hover .nav-link {
   background: #fff;
   color: #111;
   -webkit-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
   -moz-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
 }
-.nav-link:after {
+.nav-item.roll .nav-link:after {
   content: attr(data-title);
   display: block;
   position: absolute;

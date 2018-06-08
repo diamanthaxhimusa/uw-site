@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, NavLink, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink, Redirect, withRouter } from 'react-router-dom';
 import './Navbar.css';
 
 class Navbar extends Component {
@@ -7,20 +7,17 @@ class Navbar extends Component {
     super(props);
   }
   
-  componentDidMount() {
-  }
-
   render() {
     return (
       <div className="app-header" >
         <nav>
           <ul className="nav-list" >
-            <li className="nav-item roll">
+            <li className={`nav-item ${this.props.location.pathname == '/home' ? '' : 'roll'}`}>
               <NavLink to="/home" className="nav-link" data-title="Home" activeClassName="active">
                 Home
               </NavLink>
             </li>
-            <li className="nav-item roll">
+            <li className={`nav-item ${this.props.location.pathname == '/about' ? '' : 'roll'}`}>
               <NavLink to="/about" className="nav-link" data-title="About" activeClassName="active">
                 About
               </NavLink>
@@ -32,4 +29,4 @@ class Navbar extends Component {
   }
 }
 
-export { Navbar };
+export default withRouter(Navbar);
