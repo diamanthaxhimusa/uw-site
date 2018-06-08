@@ -6,18 +6,22 @@ import { Navbar } from './components';
 class App extends Component {
   render() {
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div id="main">
         <Navbar />
         <main>
+          <Route exact path="/" render={() => (
+            <Redirect to="/home" />
+          )} />
           <Route
             exact
-            path="/" 
+            path="/home" 
             render={() => (
               <Home />
             )} 
           />
           <Route
+            exact
             path="/about"
             render={() => (
               <About />

@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink, Redirect } from 'react-router-dom';
+import './Navbar.css';
 
 class Navbar extends Component {
+  constructor(props) {
+    super(props);
+  }
+  
+  componentDidMount() {
+  }
+
   render() {
     return (
-      <div style={{ width: '100%', height: 40, backgroundColor: '#424242' }} >
+      <div className="app-header" >
         <nav>
-          <ul style={{ listStyleType: 'none', margin: 0}} >
-            <li style={{ float: 'left', padding: 10 }}>
-              <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
+          <ul className="nav-list" >
+            <li className="nav-item roll">
+              <NavLink to="/home" className="nav-link" data-title="Home" activeClassName="active">
                 Home
-              </Link>
+              </NavLink>
             </li>
-            <li style={{ float: 'left', padding: 10 }}>
-              <Link to="/about" style={{ textDecoration: 'none', color: 'white' }}>
+            <li className="nav-item roll">
+              <NavLink to="/about" className="nav-link" data-title="About" activeClassName="active">
                 About
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>
