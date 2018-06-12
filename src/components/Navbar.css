@@ -6,6 +6,7 @@
   right: 0;
   left: 0;
   background-color: #111;
+  z-index: 9999;
 }
 .app-header nav {
   height: 100%;
