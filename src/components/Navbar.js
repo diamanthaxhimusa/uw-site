@@ -23,7 +23,7 @@ class Navbar extends Component {
               </NavLink>
             </li>
             <li className={`nav-item roll`}>
-              <Link to="/home" className="nav-link" data-title="Work">
+              <Link to="/work" className="nav-link" data-title="Work">
                 Work
               </Link>
             </li>

@@ -40,7 +40,7 @@ class Home extends Component {
             return (
               <div className="component" style={{ backgroundImage: `url(${bg[id]})` }}>
                 <div className="title">
-                  <h2>{project}</h2>
+                  <h2 className="title-pr">{project}</h2>
                 </div>
               </div>
             );

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 import Home from './routes/Home';
 import About from './routes/About';
+import Work from './routes/Work';
 import Navbar from './components/Navbar';
 class App extends Component {
   render() {
@@ -25,6 +26,13 @@ class App extends Component {
             path="/about"
             render={() => (
               <About />
+            )}
+          />
+          <Route
+            exact
+            path="/work"
+            render={() => (
+              <Work />
             )}
           />
         </main>
